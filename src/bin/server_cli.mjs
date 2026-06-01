@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import http from "node:http";
 import path from "node:path";
 import { promises as fs } from "fs";
@@ -8,12 +6,10 @@ import { server as wisp, logging, extensions } from "@mercuryworkshop/wisp-js/se
 import { createRequire } from "module";
 import { Command } from "commander";
 
-//find own program version from package.json
-//https://stackoverflow.com/a/76782867/21330993
 const package_json = createRequire(import.meta.url)("./../../package.json");
 const version = package_json.version;
+const region = process.env.LOCATION?.trim();
 
-//parse arguments
 const program = new Command();
 program
   .name("wisp-js-server")
@@ -26,12 +22,11 @@ program
   .option("-L, --logging <log_level>", "The log level to use. This is either DEBUG, INFO, WARN, ERROR, or NONE.", "INFO")
   .option("-S, --static <static_dir>", "The directory to serve static files from. (optional)")
   .option("-C, --config <config_path>", "The path to your Wisp server config file. This is the same format as `wisp.options` in the API. (optional)")
-  .option("-O, --options <options_json>", "A JSON string to set the Wisp config without using a file. (optional)")
+  .option("-O, --options <options_json>", "A JSON string to set the Wisp config without using a file. (optional)");
 
 program.parse();
 const opts = program.opts();
 
-//set up server settings
 opts.logging = opts.logging.toUpperCase();
 if (["DEBUG", "INFO", "WARN", "ERROR", "NONE"].includes(opts.logging)) {
   logging.set_level(logging[opts.logging]);
@@ -59,11 +54,10 @@ if (opts.config) {
 
 if (opts.options) {
   opts.options = JSON.parse(opts.options);
-  for  (let [key, value] of Object.entries(opts.options))
+  for (let [key, value] of Object.entries(opts.options))
     wisp.options[key] = value;
 }
 
-//start the wisp server 
 const mime_types = {
   "ico": "image/x-icon",
   "html": "text/html",
@@ -84,12 +78,18 @@ const mime_types = {
 const server = http.createServer(async (req, res) => {
   let client_ip = req.socket.address().address;
   let real_ip = wisp.parse_real_ip(req.headers, client_ip);
-  logging.info(`HTTP ${req.method} ${req.url} from ${real_ip}`)
+  logging.info(`HTTP ${req.method} ${req.url} from ${real_ip}`);
 
   if (!opts.static) {
     res.writeHead(200, { "Content-Type": "text/plain" });
-    res.end(`Crafted's Wisp v${version} is fully operational.`);
-    return  
+
+    res.end(
+      region
+        ? `Crafted's Wisp v${version} is online and serving the ${region} region.`
+        : `Crafted's Wisp v${version} is online.`
+    );
+
+    return;
   }
 
   try {
@@ -105,18 +105,18 @@ const server = http.createServer(async (req, res) => {
     let file_ext = served_path.split(".").reverse()[0];
     let content_type = mime_types[file_ext] || "application/octet-stream";
 
-    res.writeHead(200, {"Content-Type": content_type});
+    res.writeHead(200, { "Content-Type": content_type });
     res.end(data);
   }
 
   catch (err) {
     if (err.code == "ENOENT") {
-      res.writeHead(404, {"Content-Type": "text/plain"});
+      res.writeHead(404, { "Content-Type": "text/plain" });
       res.end("404 not found");
     }
     else {
-      res.writeHead(500, {"Content-Type": "text/plain"});
-      res.end("500 internal server error:\n" + err);  
+      res.writeHead(500, { "Content-Type": "text/plain" });
+      res.end("500 internal server error:\n" + err);
     }
   }
 });
