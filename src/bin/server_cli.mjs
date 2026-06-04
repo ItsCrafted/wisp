@@ -83,7 +83,7 @@ const server = http.createServer(async (req, res) => {
   logging.info(`HTTP ${req.method} ${req.url} from ${real_ip}`);
 
   if (!opts.static) {
-    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
 
     const ascii_art = `
    ___           __ _          _    ___
