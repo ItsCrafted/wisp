@@ -95,7 +95,7 @@ const server = http.createServer(async (req, res) => {
 
 
 
-                          CRAFTED GAMZ: WISP LICENSE
+                          CRAFTED GAMZ: WISP USAGE LICENSE
 
 This software and associated infrastructure ("the Software") is provided by
 Crafted Gamz under the following terms:
@@ -131,6 +131,9 @@ Crafted Gamz under the following terms:
    All rights not expressly granted herein are reserved by Crafted Gamz.
    Unauthorized reproduction, distribution, or commercial use of the
    Software is strictly prohibited.
+
+
+   All Rights Reserved.
 `;
 
     res.end(
