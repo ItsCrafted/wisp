@@ -85,10 +85,19 @@ const server = http.createServer(async (req, res) => {
   if (!opts.static) {
     res.writeHead(200, { "Content-Type": "text/plain" });
 
+    const ascii_art = `
+   ___           __ _          _    ___
+  / __|_ _ __ _ / _| |_ ___ __| |  / __|__ _ _ __  ___
+ | (__| '_/ _' |  _|  _/ -_| _' | | (_ / _' | '  \| /
+  \___|_| \__,_|_|  \__\___\__,_|  \___\__,_|_|_|_/__|
+
+ Version 15: © Crafted Gamz 2023-2027
+`;
+
     res.end(
       region
-        ? `Crafted's Wisp v${version} is online and serving the ${region} region.`
-        : `Crafted's Wisp v${version} is online.`
+        ? `Crafted's Wisp v${version} is online and serving the ${region} region.\n${ascii_art}`
+        : `Crafted's Wisp v${version} is online.\n${ascii_art}`
     );
 
     return;
