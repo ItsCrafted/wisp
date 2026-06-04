@@ -86,54 +86,66 @@ const server = http.createServer(async (req, res) => {
     res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
 
     const ascii_art = `
-   ___           __ _          _    ___
-  / __|_ _ __ _ / _| |_ ___ __| |  / __|__ _ _ __  ___
- | (__| '_/ _' |  _|  _/ -_| _' | | (_ / _' | '  \| /
-  \___|_| \__,_|_| |__|_|___|___|_,_|  \___\__,_|_|_|_/__|
+              ___           __ _          _    ___
+              / __|_ _ __ _ / _| |_ ___ __| |  / __|__ _ _ __  ___
+             | (__| '_/ _' |  _|  _/ -_| _' | | (_ / _' | '  \| /
+              \___|_| \__,_|_| |__|_|___|___|_,_|  \___\__,_|_|_|_/__|
 
- Version 15: © Crafted Gamz 2023-2027
+      ┌══════════════════════════════════════════════════════════════════┐
+      |             Version 15: © Crafted Gamz 2023-2027                 |
+      └══════════════════════════════════════════════════════════════════┘
 
+                    ┌─────────────────────────────────┐
+                    │   CRAFTED GAMZ: WISP LICENSE    │
+                    └─────────────────────────────────┘
 
+ ┌────────────────────────────────────────────────────────────────────────────┐
+ |This software and associated infrastructure ("the Software") is provided by |
+ |                 Crafted Gamz under the following terms:                    |
+ └────────────────────────────────────────────────────────────────────────────┘
 
-                          CRAFTED GAMZ: WISP USAGE LICENSE
+ ┌─ 1. PERMITTED USE ─────────────────────────────────────────────────────────┐
+ │ The Software is made available strictly for testing and non-production     |
+ │ purposes. You may use, modify, and inspect the Software in development,    |
+ │ staging, or experimental environments only.                                |
+ └────────────────────────────────────────────────────────────────────────────┘
 
-This software and associated infrastructure ("the Software") is provided by
-Crafted Gamz under the following terms:
+ ┌─ 2. RESTRICTIONS ──────────────────────────────────────────────────────────┐
+ │ You may not use the Software to serve live, production traffic or in any   |
+ │ environment where real end-users depend on it for active, operational      |
+ │ services. Any such use is expressly prohibited without prior written       |
+ │ authorization from Crafted Gamz.                                           |
+ └────────────────────────────────────────────────────────────────────────────┘
 
-1. PERMITTED USE
-   The Software is made available strictly for testing and non-production
-   purposes. You may use, modify, and inspect the Software in development,
-   staging, or experimental environments only.
+ ┌─ 3. ECLIPSE SUITE ─────────────────────────────────────────────────────────┐
+ │ Members of the Eclipse Suite are granted unlimited, unrestrained access    |
+ │ to the Software with no additional restrictions beyond applicable law.     |
+ │ Eclipse Suite membership is determined solely by Crafted Gamz.             |
+ └────────────────────────────────────────────────────────────────────────────┘
 
-2. RESTRICTIONS
-   You may not use the Software to serve live, production traffic or in any
-   environment where real end-users depend on it for active, operational
-   services. Any such use is expressly prohibited without prior written
-   authorization from Crafted Gamz.
+ ┌─ 4. THIRD-PARTY ACKNOWLEDGMENT ────────────────────────────────────────────┐
+ │ This Software implements the Wisp protocol, developed by Mercury Workshop. |
+ │ Credit is given to Mercury Workshop for their work on the Wisp protocol    |
+ │ specification. This license does not supersede any rights held by          |
+ │ Mercury Workshop over the Wisp protocol itself.                            |
+ └────────────────────────────────────────────────────────────────────────────┘
 
-3. ECLIPSE SUITE
-   Members of the Eclipse Suite are granted unlimited, unrestrained access
-   to the Software with no additional restrictions beyond applicable law.
-   Eclipse Suite membership is determined solely by Crafted Gamz.
+ ┌─ 5. NO WARRANTY ───────────────────────────────────────────────────────────┐
+ │ CRAFTED GAMZ MAKES NO REPRESENTATIONS AND EXTENDS NO WARRANTIES OF ANY     |
+ │ KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES   |
+ │ OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND VALIDITY OF      |
+ │ PATENT RIGHTS CLAIMS, ISSUED OR PENDING.                                   |
+ └────────────────────────────────────────────────────────────────────────────┘
 
-4. THIRD-PARTY ACKNOWLEDGMENT
-   This Software implements the Wisp protocol, developed by Mercury Workshop.
-   Credit is given to Mercury Workshop for their work on the Wisp protocol
-   specification. This license does not supersede any rights held by
-   Mercury Workshop over the Wisp protocol itself.
+ ┌─ 6. RESERVATION OF RIGHTS ─────────────────────────────────────────────────┐
+ │ All rights not expressly granted herein are reserved by Crafted Gamz.      |
+ │ Unauthorized reproduction, distribution, or commercial use of the          |
+ │ Software is strictly prohibited.                                           |
+ └────────────────────────────────────────────────────────────────────────────┘
 
-5. NO WARRANTY
-    CRAFTED GAMZ MAKES NO REPRESENTATIONS AND EXTENDS NO WARRANTIES OF ANY KIND, EITHER
-    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, 
-    FITNESS FOR A PARTICULAR PURPOSE, AND VALIDITY OF PATENT RIGHTS CLAIMS, ISSUED OR PENDING.
-
-6. RESERVATION OF RIGHTS
-   All rights not expressly granted herein are reserved by Crafted Gamz.
-   Unauthorized reproduction, distribution, or commercial use of the
-   Software is strictly prohibited.
-
-
-   All Rights Reserved.
+               ══════════════════════════════════════════════
+               All Rights Reserved. © Crafted Gamz 2023-2027
+               ══════════════════════════════════════════════
 `;
 
     res.end(
