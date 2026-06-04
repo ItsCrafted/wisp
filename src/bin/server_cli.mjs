@@ -92,7 +92,7 @@ const server = http.createServer(async (req, res) => {
               \___|_| \__,_|_| |__|_|___|___|_,_|  \___\__,_|_|_|_/__|
 
       ┌══════════════════════════════════════════════════════════════════┐
-      |             Version 15: © Crafted Gamz 2023-2027                 |
+      |    Version 15: © Crafted Gamz 2023-2027 All Rights Reserved.     |
       └══════════════════════════════════════════════════════════════════┘
 
                     ┌─────────────────────────────────┐
@@ -142,10 +142,6 @@ const server = http.createServer(async (req, res) => {
  │ Unauthorized reproduction, distribution, or commercial use of the          |
  │ Software is strictly prohibited.                                           |
  └────────────────────────────────────────────────────────────────────────────┘
-
-               ══════════════════════════════════════════════
-               All Rights Reserved. © Crafted Gamz 2023-2027
-               ══════════════════════════════════════════════
 `;
 
     res.end(
