@@ -94,9 +94,8 @@ const server = http.createServer(async (req, res) => {
  Version 15: © Crafted Gamz 2023-2027
 
 
-License:
 
- CRAFTED GAMZ: WISP LICENSE
+                          CRAFTED GAMZ: WISP LICENSE
 
 This software and associated infrastructure ("the Software") is provided by
 Crafted Gamz under the following terms:
