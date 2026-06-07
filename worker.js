@@ -121,7 +121,7 @@ export default {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Crafted Global Wisp</title>
 <script src="https://cdn.cgamz.online/brand.js" defer></script>
-link rel="icon" href="https://cdn.cgamz.online/favicon.png">
+<link rel="icon" href="https://cdn.cgamz.online/favicon.png">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
