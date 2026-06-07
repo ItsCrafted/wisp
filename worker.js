@@ -1,9 +1,9 @@
 const WISP_SERVERS = {
-  "us-east-1": { url: "wss://wisp-us-east-1.onrender.com/", location: "Virginia, USA" },
-  "us-east-2": { url: "wss://wisp-us-east-2.onrender.com/", location: "Ohio, USA" },
-  "us-west":   { url: "wss://wisp-us-west.onrender.com/",   location: "Oregon, USA" },
-  "europe":    { url: "wss://wisp-europe.onrender.com/",    location: "Frankfurt, Germany" },
-  "asia":      { url: "wss://wisp-asia.onrender.com/",      location: "Singapore" },
+  "us-east-1": { url: "wss://wisp-us-east-1.cgamz.online", location: "Virginia, USA" },
+  "us-east-2": { url: "wss://wisp-us-east-2.cgamz.online", location: "Ohio, USA" },
+  "us-west":   { url: "wss://wisp-us-west.cgamz.online",   location: "Oregon, USA" },
+  "europe":    { url: "wss://wisp-europe.cgamz.online",    location: "Frankfurt, Germany" },
+  "asia":      { url: "wss://wisp-asia.cgamz.online",      location: "Singapore" },
 };
 
 const DEFAULT_SERVER = "us-east-1";
@@ -121,7 +121,7 @@ export default {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Crafted Global Wisp</title>
 <script src="https://cdn.cgamz.online/brand.js" defer></script>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='white'>W</text></svg>">
+link rel="icon" href="https://cdn.cgamz.online/favicon.png">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap');
   * { box-sizing: border-box; margin: 0; padding: 0; }
