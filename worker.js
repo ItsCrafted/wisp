@@ -119,7 +119,7 @@ export default {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Crafted Global Wisp</title>
+<title>Crafted Global Wisp Servers</title>
 <script src="https://cdn.cgamz.online/brand.js" defer></script>
 <link rel="icon" href="https://cdn.cgamz.online/favicon.png">
 <style>
